@@ -13,7 +13,7 @@ const sharedItems: SeasonalMenuItem[] = [
   {
     name: 'Item 1',
     price: '$3.15',
-    image: '/menu-images/pastry-1.png',
+    image: '/menu-images/other/pastry-1.png',
   },
 ];
 
@@ -22,28 +22,28 @@ const seasonalItems: Record<Location, SeasonalMenuItem[]> = {
     {
       name: 'Tomato basil scone',
       price: '$3.15',
-      image: '/menu-images/pastry-1.png',
+      image: '/menu-images/gvl/tomato-basil.png',
     },
     {
       name: 'Spinach Feta Puff',
       price: '$3.15',
-      image: '/menu-images/pastry-2.png',
+      image: '/menu-images/gvl/spinach-feta.png',
     },
     {
-      name: 'Early Grey Berry Scone',
+      name: 'Blackberry Earl Gray Scone',
       price: '$3.15',
-      image: '/menu-images/pastry-3.png',
+      image: '/menu-images/gvl/blackberry-earl-gray.png',
     },
     {
       name: 'GF/V Oatberry bar',
       price: '$3.15',
-      image: '/menu-images/pastry-4.png',
+      image: '/menu-images/placeholder.png',
       tag: 'Contains nuts',
     },
     {
       name: 'Lemon blueberry danish',
       price: '$3.15',
-      image: '/menu-images/pastry-5.png',
+      image: '/menu-images/blueberry-lemon-danish.png',
     },
     // ...sharedItems,
   ],
@@ -51,27 +51,27 @@ const seasonalItems: Record<Location, SeasonalMenuItem[]> = {
     {
       name: 'Lemon earl grey shortbread',
       price: '$3.15',
-      image: '/menu-images/pastry-6.png',
+      image: '/menu-images/seneca/earl-gray-lemon.png',
     },
     {
       name: 'French onion scone',
       price: '$3.15',
-      image: '/menu-images/pastry-7.png',
+      image: '/menu-images/seneca/french-onion-scone.png',
     },
     {
       name: 'Strawberry white chocolate scone',
       price: '$3.15',
-      image: '/menu-images/pastry-8.png',
+      image: '/menu-images/seneca/strawberry-white-choc-scone.png',
     },
     {
       name: 'GF PB chocolate sandwich cookie',
       price: '$3.15',
-      image: '/menu-images/pastry-9.png',
+      image: '/menu-images/seneca/gf-pb-choc-sandwich-cookie.png',
     },
     {
       name: 'Blueberry lemon poppyseed roll',
       price: '$3.15',
-      image: '/menu-images/pastry-10.png',
+      image: '/menu-images/placeholder.png',
       tag: 'Fri-Sun only',
     },
     // ...sharedItems,

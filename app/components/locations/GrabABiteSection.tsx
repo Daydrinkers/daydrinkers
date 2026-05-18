@@ -2,25 +2,25 @@ import PrimaryButton from '~/components/ui/Button';
 import DraggableImage from '~/components/ui/DraggableImage';
 
 const images = [
-  {rotate: '-8deg', src: '/menu-images/pastry-1.png'},
-  {rotate: '12deg', src: '/menu-images/pastry-2.png'},
-  {rotate: '-5deg', src: '/menu-images/pastry-3.png'},
-  {rotate: '7deg', src: '/menu-images/pastry-4.png'},
-  {rotate: '-12deg', src: '/menu-images/pastry-5.png'},
-  {rotate: '9deg', src: '/menu-images/pastry-6.png'},
-  {rotate: '-6deg', src: '/menu-images/pastry-7.png'},
-  {rotate: '-10deg', src: '/menu-images/pastry-8.png'},
-  {rotate: '5deg', src: '/menu-images/pastry-9.png'},
-  {rotate: '11deg', src: '/menu-images/pastry-10.png'},
-  {rotate: '-4deg', src: '/menu-images/pastry-11.png'},
-  {rotate: '8deg', src: '/menu-images/pastry-1.png'},
-  {rotate: '-13deg', src: '/menu-images/pastry-2.png'},
-  {rotate: '6deg', src: '/menu-images/pastry-3.png'},
-  {rotate: '-9deg', src: '/menu-images/pastry-4.png'},
-  {rotate: '13deg', src: '/menu-images/pastry-5.png'},
-  {rotate: '-3deg', src: '/menu-images/pastry-6.png'},
-  {rotate: '10deg', src: '/menu-images/pastry-7.png'},
-  {rotate: '-11deg', src: '/menu-images/pastry-8.png'},
+  {rotate: '-8deg', src: '/menu-images/other/pastry-1.png'},
+  {rotate: '12deg', src: '/menu-images/other/pastry-2.png'},
+  {rotate: '-5deg', src: '/menu-images/other/pastry-3.png'},
+  {rotate: '7deg', src: '/menu-images/other/pastry-4.png'},
+  {rotate: '-12deg', src: '/menu-images/other/pastry-5.png'},
+  {rotate: '9deg', src: '/menu-images/other/pastry-6.png'},
+  {rotate: '-6deg', src: '/menu-images/other/pastry-7.png'},
+  {rotate: '-10deg', src: '/menu-images/other/pastry-8.png'},
+  {rotate: '5deg', src: '/menu-images/other/pastry-9.png'},
+  {rotate: '11deg', src: '/menu-images/other/pastry-10.png'},
+  {rotate: '-4deg', src: '/menu-images/other/pastry-11.png'},
+  {rotate: '8deg', src: '/menu-images/other/pastry-1.png'},
+  {rotate: '-13deg', src: '/menu-images/other/pastry-2.png'},
+  {rotate: '6deg', src: '/menu-images/other/pastry-3.png'},
+  {rotate: '-9deg', src: '/menu-images/other/pastry-4.png'},
+  {rotate: '13deg', src: '/menu-images/other/pastry-5.png'},
+  {rotate: '-3deg', src: '/menu-images/other/pastry-6.png'},
+  {rotate: '10deg', src: '/menu-images/other/pastry-7.png'},
+  {rotate: '-11deg', src: '/menu-images/other/pastry-8.png'},
 ];
 
 function CollageImage({src, rotate}: {src: string; rotate: string}) {
@@ -55,7 +55,6 @@ export default function GrabABiteSection() {
   return (
     <section className="bg-[#f0f2ea] py-16 md:py-24 px-6 md:px-16">
       <div className="max-w-screen-xl mx-auto">
-
         {/* Mobile: 4 images → text → 4 images */}
         <div className="md:hidden grid grid-cols-2 gap-x-8 gap-y-10 items-center">
           {images.slice(0, 4).map((img, i) => (
@@ -85,7 +84,6 @@ export default function GrabABiteSection() {
             <CollageImage key={i + 9} src={img.src} rotate={img.rotate} />
           ))}
         </div>
-
       </div>
     </section>
   );

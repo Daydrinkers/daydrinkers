@@ -7,17 +7,17 @@ const sharedPastries: PastryItem[] = [
   {
     name: 'Chocolate chip cookie',
     price: '$3.15',
-    image: '/menu-images/pastry-3.png',
+    image: '/menu-images/choc-chip-cookie.png',
   },
   {
     name: 'GF banana chocolate chip loaf',
     price: '$3.15',
-    image: '/menu-images/pastry-7.png',
+    image: '/menu-images/gf-choc-banana-loaf.png',
   },
   {
     name: 'Cinnamon roll',
     price: '$3.15',
-    image: '/menu-images/pastry-1.png',
+    image: '/menu-images/placeholder.png',
     tag: 'Saturdays only',
   },
 ];
@@ -29,25 +29,25 @@ const pastryItems: Record<Location, PastryItem[]> = {
     {
       name: 'Bacon, egg, and cheese sandwich',
       price: '$3.15',
-      image: '/menu-images/pastry-6.png',
+      image: '/menu-images/placeholder.png',
       tag: 'Fri-Sun only',
     },
     {
       name: 'Garden press sandwich',
       price: '$3.15',
-      image: '/menu-images/pastry-7.png',
+      image: '/menu-images/placeholder.png',
       tag: 'Fri-Sun only',
     },
     {
       name: 'Avocado smash toast',
       price: '$3.15',
-      image: '/menu-images/pastry-8.png',
+      image: '/menu-images/placeholder.png',
       tag: 'Fri-Sun only',
     },
     {
       name: 'Waffle with topping',
       price: '$3.15',
-      image: '/menu-images/pastry-9.png',
+      image: '/menu-images/placeholder.png',
       tag: 'Fri-Sun only',
     },
   ],
