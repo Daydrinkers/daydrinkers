@@ -43,7 +43,7 @@ const seasonalItems: Record<Location, SeasonalMenuItem[]> = {
     {
       name: 'Lemon blueberry danish',
       price: '$3.15',
-      image: '/menu-images/blueberry-lemon-danish.png',
+      image: '/menu-images/gvl/blueberry-lemon-danish.png',
     },
     // ...sharedItems,
   ],

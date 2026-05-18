@@ -7,12 +7,12 @@ const sharedPastries: PastryItem[] = [
   {
     name: 'Chocolate chip cookie',
     price: '$3.15',
-    image: '/menu-images/choc-chip-cookie.png',
+    image: '/menu-images/shared/choc-chip-cookie.png',
   },
   {
     name: 'GF banana chocolate chip loaf',
     price: '$3.15',
-    image: '/menu-images/gf-choc-banana-loaf.png',
+    image: '/menu-images/shared/gf-choc-banana-loaf.png',
   },
   {
     name: 'Cinnamon roll',
