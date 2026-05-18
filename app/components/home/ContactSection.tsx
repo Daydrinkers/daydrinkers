@@ -1,4 +1,5 @@
 import {useEffect, useRef, useState} from 'react';
+import {useFetcher} from 'react-router';
 
 const decorativeImages = [
   {
@@ -27,6 +28,15 @@ const decorativeImages = [
 export default function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [scrollDelta, setScrollDelta] = useState(0);
+  const fetcher = useFetcher<{success?: boolean; error?: string}>();
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const isSubmitting = fetcher.state !== 'idle';
+  const submitted = fetcher.data?.success;
+
+  useEffect(() => {
+    if (submitted) formRef.current?.reset();
+  }, [submitted]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -105,34 +115,47 @@ export default function ContactSection() {
               </p>
             </div>
 
-            <form className="flex flex-col gap-4">
+            <fetcher.Form ref={formRef} method="post" className="flex flex-col gap-4">
               <input
                 type="text"
+                name="name"
                 placeholder="Name"
                 className="bg-white border border-[#2a6b8f] rounded-full px-8 h-[67px] text-base text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-[#2a6b8f]"
               />
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="Email*"
                 className="bg-white border border-[#2a6b8f] rounded-full px-8 h-[67px] text-base text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-[#2a6b8f]"
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder="Phone Number"
                 className="bg-white border border-[#2a6b8f] rounded-full px-8 h-[67px] text-base text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-[#2a6b8f]"
               />
               <textarea
+                name="message"
                 placeholder="What's on your mind?"
                 rows={5}
                 className="bg-white border border-[#2a6b8f] rounded-[32px] px-8 py-5 text-base text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-[#2a6b8f] resize-none h-[212px]"
               />
-              <button
-                type="submit"
-                className="bg-black text-[#f0f2ea] border-2 border-black rounded-full px-8 py-4 flex items-center text-base w-fit mt-2 hover:bg-transparent hover:text-black transition-colors"
-              >
-                Submit
-              </button>
-            </form>
+              {fetcher.data?.error && (
+                <p className="text-red-600 text-sm">{fetcher.data.error}</p>
+              )}
+              {submitted ? (
+                <p className="text-[#3c6d8e] font-medium">Thanks! We&apos;ll be in touch soon.</p>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-black text-[#f0f2ea] border-2 border-black rounded-full px-8 py-4 flex items-center text-base w-fit mt-2 hover:bg-transparent hover:text-black transition-colors disabled:opacity-50"
+                >
+                  {isSubmitting ? 'Sending…' : 'Submit'}
+                </button>
+              )}
+            </fetcher.Form>
           </div>
         </div>
       </div>
