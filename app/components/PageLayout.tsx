@@ -21,6 +21,7 @@ interface PageLayoutProps {
   header: HeaderQuery;
   isLoggedIn: Promise<boolean>;
   publicStoreDomain: string;
+  seasonalCollectionHandle: string;
   children?: React.ReactNode;
 }
 
@@ -31,18 +32,20 @@ export function PageLayout({
   header,
   isLoggedIn,
   publicStoreDomain,
+  seasonalCollectionHandle,
 }: PageLayoutProps) {
   return (
     <Aside.Provider>
       <CartAside cart={cart} />
       <SearchAside />
-      <MobileMenuAside header={header} publicStoreDomain={publicStoreDomain} />
+      <MobileMenuAside header={header} publicStoreDomain={publicStoreDomain} seasonalCollectionHandle={seasonalCollectionHandle} />
       {header && (
         <Header
           header={header}
           cart={cart}
           isLoggedIn={isLoggedIn}
           publicStoreDomain={publicStoreDomain}
+          seasonalCollectionHandle={seasonalCollectionHandle}
         />
       )}
       <main className="pt-[66px]">{children}</main>
@@ -158,9 +161,11 @@ function SearchAside() {
 function MobileMenuAside({
   header,
   publicStoreDomain,
+  seasonalCollectionHandle,
 }: {
   header: PageLayoutProps['header'];
   publicStoreDomain: PageLayoutProps['publicStoreDomain'];
+  seasonalCollectionHandle: PageLayoutProps['seasonalCollectionHandle'];
 }) {
   return (
     header.menu &&
@@ -171,6 +176,7 @@ function MobileMenuAside({
           viewport="mobile"
           primaryDomainUrl={header.shop.primaryDomain.url}
           publicStoreDomain={publicStoreDomain}
+          seasonalCollectionHandle={seasonalCollectionHandle}
         />
       </Aside>
     )
