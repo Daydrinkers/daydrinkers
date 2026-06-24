@@ -69,6 +69,26 @@ const seasonalItems: Record<Location, SeasonalMenuItem[]> = {
       image: '/menu-images/seneca/gf-pb-choc-sandwich-cookie.png',
     },
     {
+      name: 'Oatmeal raisin cookie',
+      price: '$3.15',
+      image: '/menu-images/seneca/oatmeal-raisin-cookie.png',
+    },
+    {
+      name: 'Blueberry poptart',
+      price: '$3.15',
+      image: '/menu-images/seneca/blueberry-poptart.png',
+    },
+    {
+      name: 'Guava pastelito',
+      price: '$3.15',
+      image: '/menu-images/seneca/guava-pastelito.png',
+    },
+    {
+      name: 'Jalapeno cheddar scone',
+      price: '$3.15',
+      image: '/menu-images/seneca/jalapeno-cheddar-scone.png',
+    },
+    {
       name: 'Blueberry lemon poppyseed roll',
       price: '$3.15',
       image: '/menu-images/placeholder.png',

@@ -396,12 +396,41 @@ export type HomeProductItemFragment = Pick<
 };
 
 export type HomeProductsQueryVariables = StorefrontAPI.Exact<{
-  first: StorefrontAPI.Scalars['Int']['input'];
+  seasonalFirst: StorefrontAPI.Scalars['Int']['input'];
+  seasonalHandle: StorefrontAPI.Scalars['String']['input'];
+  shopFirst: StorefrontAPI.Scalars['Int']['input'];
   country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
   language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
 }>;
 
 export type HomeProductsQuery = {
+  seasonalCollection?: StorefrontAPI.Maybe<{
+    products: {
+      nodes: Array<
+        Pick<
+          StorefrontAPI.Product,
+          'id' | 'handle' | 'title' | 'availableForSale'
+        > & {
+          featuredImage?: StorefrontAPI.Maybe<
+            Pick<
+              StorefrontAPI.Image,
+              'id' | 'altText' | 'url' | 'width' | 'height'
+            >
+          >;
+          priceRange: {
+            minVariantPrice: Pick<
+              StorefrontAPI.MoneyV2,
+              'amount' | 'currencyCode'
+            >;
+            maxVariantPrice: Pick<
+              StorefrontAPI.MoneyV2,
+              'amount' | 'currencyCode'
+            >;
+          };
+        }
+      >;
+    };
+  }>;
   products: {
     nodes: Array<
       Pick<
@@ -1348,7 +1377,7 @@ interface GeneratedQueryTypes {
     return: FooterQuery;
     variables: FooterQueryVariables;
   };
-  '#graphql\n  fragment HomeMoneyProductItem on MoneyV2 {\n    amount\n    currencyCode\n  }\n  fragment HomeProductItem on Product {\n    id\n    handle\n    title\n    availableForSale\n    featuredImage {\n      id\n      altText\n      url\n      width\n      height\n    }\n    priceRange {\n      minVariantPrice {\n        ...HomeMoneyProductItem\n      }\n      maxVariantPrice {\n        ...HomeMoneyProductItem\n      }\n    }\n  }\n  query HomeProducts(\n    $first: Int!\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    products(first: $first, sortKey: BEST_SELLING) {\n      nodes {\n        ...HomeProductItem\n      }\n    }\n  }\n': {
+  '#graphql\n  fragment HomeMoneyProductItem on MoneyV2 {\n    amount\n    currencyCode\n  }\n  fragment HomeProductItem on Product {\n    id\n    handle\n    title\n    availableForSale\n    featuredImage {\n      id\n      altText\n      url\n      width\n      height\n    }\n    priceRange {\n      minVariantPrice {\n        ...HomeMoneyProductItem\n      }\n      maxVariantPrice {\n        ...HomeMoneyProductItem\n      }\n    }\n  }\n  query HomeProducts(\n    $seasonalFirst: Int!\n    $seasonalHandle: String!\n    $shopFirst: Int!\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    seasonalCollection: collection(handle: $seasonalHandle) {\n      products(first: $seasonalFirst) {\n        nodes {\n          ...HomeProductItem\n        }\n      }\n    }\n    products(first: $shopFirst, sortKey: BEST_SELLING) {\n      nodes {\n        ...HomeProductItem\n      }\n    }\n  }\n': {
     return: HomeProductsQuery;
     variables: HomeProductsQueryVariables;
   };

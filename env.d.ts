@@ -5,3 +5,9 @@
 
 // Enhance TypeScript's built-in typings.
 import '@total-typescript/ts-reset';
+
+declare global {
+  interface Env {
+    SEASONAL_COLLECTION_HANDLE?: string;
+  }
+}
