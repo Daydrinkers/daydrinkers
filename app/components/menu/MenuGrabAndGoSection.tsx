@@ -7,27 +7,31 @@ const sharedItems: GrabAndGoItem[] = [
   {
     name: 'Bacon egg and cheese sandwich',
     price: '$3.15',
-    image: '/menu-images/pastry-3.png',
+    image: '/menu-images/placeholder.png',
   },
   {
     name: 'Bacon and cheese Quiche bites',
     price: '$3.15',
-    image: '/menu-images/pastry-7.png',
+    image: '/menu-images/placeholder.png',
   },
   {
     name: 'Spinach tomato feta quiche bites',
     price: '$3.15',
-    image: '/menu-images/pastry-1.png',
+    image: '/menu-images/placeholder.png',
   },
 ];
 
 const grabAndGoItems: Record<Location, GrabAndGoItem[]> = {
   greenville: [
-    {name: 'Energy bites', price: '$3.15', image: '/menu-images/pastry-5.png'},
+    {
+      name: 'Energy bites',
+      price: '$3.15',
+      image: '/menu-images/placeholder.png',
+    },
     {
       name: 'PB chocolate chip overnight oats',
       price: '$3.15',
-      image: '/menu-images/pastry-2.png',
+      image: '/menu-images/placeholder.png',
     },
     ...sharedItems,
   ],

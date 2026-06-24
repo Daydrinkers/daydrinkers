@@ -11,7 +11,7 @@ import {
   XIcon,
   HouseIcon,
   CoatHangerIcon,
-  SnowflakeIcon,
+  SunIcon,
   CoffeeIcon,
   MapPinIcon,
 } from '@phosphor-icons/react';
@@ -21,6 +21,7 @@ interface HeaderProps {
   cart: Promise<CartApiQueryFragment | null>;
   isLoggedIn: Promise<boolean>;
   publicStoreDomain: string;
+  seasonalCollectionHandle: string;
 }
 
 type Viewport = 'desktop' | 'mobile';
@@ -30,6 +31,7 @@ export function Header({
   isLoggedIn,
   cart,
   publicStoreDomain,
+  seasonalCollectionHandle,
 }: HeaderProps) {
   const {shop} = header;
   const [isVisible, setIsVisible] = useState(true);
@@ -69,7 +71,10 @@ export function Header({
           </NavLink>
 
           {/* Desktop nav */}
-          <HeaderMenu viewport="desktop" />
+          <HeaderMenu
+            viewport="desktop"
+            seasonalCollectionHandle={seasonalCollectionHandle}
+          />
 
           {/* Icons */}
           <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
@@ -79,31 +84,48 @@ export function Header({
   );
 }
 
-const NAV_LINKS = [
-  {title: 'Home', url: '/'},
-  {title: 'Shop', url: '/collections/all'},
-  {title: 'Winter Collection', url: '/collections/winter-edit'},
-  {title: 'Menu', url: '/menu'},
-  {title: 'Locations', url: '/locations'},
-];
+function getNavLinks(seasonalCollectionHandle: string) {
+  return [
+    {title: 'Home', url: '/'},
+    {title: 'Shop', url: '/collections/all'},
+    {
+      title: 'Summer Collection',
+      url: `/collections/${seasonalCollectionHandle}`,
+    },
+    {title: 'Menu', url: '/menu'},
+    {title: 'Locations', url: '/locations'},
+  ];
+}
 
-const NAV_ICONS: Record<string, React.ReactNode> = {
-  '/': <HouseIcon size={24} />,
-  '/collections/all': <CoatHangerIcon size={24} />,
-  '/collections/winter-edit': <SnowflakeIcon size={24} />,
-  '/menu': <CoffeeIcon size={24} />,
-  '/locations': <MapPinIcon size={24} />,
-};
+function getNavIcons(
+  seasonalCollectionHandle: string,
+): Record<string, React.ReactNode> {
+  return {
+    '/': <HouseIcon size={24} />,
+    '/collections/all': <CoatHangerIcon size={24} />,
+    [`/collections/${seasonalCollectionHandle}`]: <SunIcon size={24} />,
+    '/menu': <CoffeeIcon size={24} />,
+    '/locations': <MapPinIcon size={24} />,
+  };
+}
 
-export function HeaderMenu({viewport}: {viewport: Viewport}) {
+export function HeaderMenu({
+  viewport,
+  seasonalCollectionHandle,
+}: {
+  viewport: Viewport;
+  seasonalCollectionHandle: string;
+}) {
   const {close} = useAside();
+  const navLinks = getNavLinks(seasonalCollectionHandle);
+  const navIcons = getNavIcons(seasonalCollectionHandle);
 
   if (viewport === 'mobile') {
     return (
       <div className="flex flex-col gap-6 p-8 pt-24">
         {/* Main nav */}
         <nav className="flex flex-col gap-6" role="navigation">
-          {NAV_LINKS.map((link) => (
+          {navLinks.map((link) => (
             <NavLink
               className="flex items-center gap-4 text-xl text-black hover:opacity-60 transition-opacity"
               end
@@ -112,7 +134,7 @@ export function HeaderMenu({viewport}: {viewport: Viewport}) {
               prefetch="intent"
               to={link.url}
             >
-              {NAV_ICONS[link.url]}
+              {navIcons[link.url]}
               {link.title}
             </NavLink>
           ))}
@@ -156,7 +178,7 @@ export function HeaderMenu({viewport}: {viewport: Viewport}) {
 
   return (
     <nav className="hidden md:flex gap-16 text-sm text-black" role="navigation">
-      {NAV_LINKS.map((link) => (
+      {navLinks.map((link) => (
         <NavLink
           className={({isActive}) =>
             `hover:opacity-60 transition-opacity${isActive ? ' font-semibold' : ''}`
