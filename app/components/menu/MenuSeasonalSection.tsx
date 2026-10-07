@@ -9,17 +9,12 @@ type SeasonalMenuItem = {
   tag?: string;
 };
 
-// Shared summer seasonal items — offered at both Greenville and Seneca.
+// Shared fall seasonal items — offered at both Greenville and Seneca.
 const sharedItems: SeasonalMenuItem[] = [
   {
-    name: 'Blueberry poptart',
+    name: 'Apple turnover',
     price: '$3.15',
-    image: '/menu-images/shared/blueberry-poptart.png',
-  },
-  {
-    name: 'Guava pastelito',
-    price: '$3.15',
-    image: '/menu-images/shared/guava-pastelito.png',
+    image: '/menu-images/shared/fall-26/apple-turnover.png',
   },
 ];
 
@@ -27,42 +22,47 @@ const seasonalItems: Record<Location, SeasonalMenuItem[]> = {
   greenville: [
     ...sharedItems,
     {
-      name: 'Tomato pie',
+      name: 'Banana streusel muffin GF',
       price: '$3.15',
-      image: '/menu-images/shared/tomato-pie.png',
+      image: '/menu-images/gvl/fall-26/banana-streusel-muffin-gf.png',
     },
     {
-      name: 'Orange cardamom cinnamon roll',
+      name: 'Brie cranberry apple tart',
       price: '$3.15',
-      image: '/menu-images/shared/orange-cinnamon-roll.png',
+      image: '/menu-images/gvl/fall-26/brie-cranberry-apple-tart.png',
     },
     {
-      name: 'Tomato pesto puff',
+      name: 'Chocolate pistachio twist',
       price: '$3.15',
-      image: '/menu-images/shared/pesto-mozz-puff-pastry.png',
+      image: '/menu-images/gvl/fall-26/chocolate-pistachio-twist.png',
     },
     {
-      name: 'Lemon scone',
+      name: 'Monkey bread bites',
       price: '$3.15',
-      image: '/menu-images/gvl/lemon-scone.png',
+      image: '/menu-images/gvl/fall-26/monkey-bread-bites.png',
     },
     {
-      name: 'Matcha cookie',
+      name: 'Pancetta gouda scone',
       price: '$3.15',
-      image: '/menu-images/gvl/matcha-cookie.png',
+      image: '/menu-images/gvl/fall-26/pancetta-gouda-scone.png',
     },
   ],
   seneca: [
     ...sharedItems,
     {
-      name: 'Tomato jalapeño cheddar scone',
+      name: 'Bacon gouda scone',
       price: '$3.15',
-      image: '/menu-images/seneca/jalapeno-cheddar-scone.png',
+      image: '/menu-images/seneca/fall-26/bacon-gouda-scone.png',
     },
     {
-      name: 'Oatmeal raisin cookie',
+      name: 'Brown sugar cinnamon poptart',
       price: '$3.15',
-      image: '/menu-images/seneca/oatmeal-raisin-cookie.png',
+      image: '/menu-images/seneca/fall-26/brown-sugar-cinnamon-poptart.png',
+    },
+    {
+      name: 'Oatmeal creampie',
+      price: '$3.15',
+      image: '/menu-images/seneca/fall-26/oatmeal-creampie.png',
     },
   ],
 };

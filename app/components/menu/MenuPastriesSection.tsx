@@ -8,18 +8,18 @@ const sharedPastries: PastryItem[] = [
   {
     name: 'Cinnamon roll',
     price: '$3.15',
-    image: '/menu-images/shared/cinnamon-roll.png',
+    image: '/menu-images/shared/year-round/cinnamon-roll.png',
     tag: 'Tues & Sat only',
   },
   {
     name: 'Chocolate chip cookie',
     price: '$3.15',
-    image: '/menu-images/shared/choc-chip-cookie.png',
+    image: '/menu-images/shared/year-round/choc-chip-cookie.png',
   },
   {
     name: 'GF banana chocolate chip loaf',
     price: '$3.15',
-    image: '/menu-images/shared/gf-choc-banana-loaf.png',
+    image: '/menu-images/shared/year-round/gf-choc-banana-loaf.png',
   },
 ];
 

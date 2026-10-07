@@ -35,9 +35,9 @@ export default function MenuSection() {
               }}
             >
               <img
-                src="/images/menu-img-4.jpeg"
+                src="/menu-images/menu-img-5.png"
                 alt="Menu tray"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover bg-white"
               />
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function MenuSection() {
               <img
                 src="/images/sheet-pastries.jpeg"
                 alt="Menu tray"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover bg-white"
               />
             </div>
           </DraggableImage>
@@ -68,9 +68,9 @@ export default function MenuSection() {
               }}
             >
               <img
-                src="/images/menu-img-4.jpeg"
+                src="/menu-images/menu-img-5.png"
                 alt="Menu food board"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover bg-white"
               />
             </div>
           </DraggableImage>
@@ -84,9 +84,9 @@ export default function MenuSection() {
               }}
             >
               <img
-                src="/images/menu-img-3.png"
+                src="/menu-images/menu-img-6.png"
                 alt="Menu food plates"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover bg-white"
               />
             </div>
           </DraggableImage>
