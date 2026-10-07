@@ -35,7 +35,7 @@ export default function MenuSection() {
               }}
             >
               <img
-                src="/images/menu-img-5.png"
+                src="/menu-images/menu-img-5.png"
                 alt="Menu tray"
                 className="w-full h-full object-cover bg-white"
               />
@@ -68,7 +68,7 @@ export default function MenuSection() {
               }}
             >
               <img
-                src="/images/menu-img-5.png"
+                src="/menu-images/menu-img-5.png"
                 alt="Menu food board"
                 className="w-full h-full object-cover bg-white"
               />
@@ -84,7 +84,7 @@ export default function MenuSection() {
               }}
             >
               <img
-                src="/images/menu-img-6.png"
+                src="/menu-images/menu-img-6.png"
                 alt="Menu food plates"
                 className="w-full h-full object-cover bg-white"
               />
